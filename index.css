@@ -10,6 +10,10 @@ body {
     color: gold;
 }
 
+.today, .tomorrow{
+    padding: 10px;
+}
+
 .today {
     font-weight: bolder;
 }
