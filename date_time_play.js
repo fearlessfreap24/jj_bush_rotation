@@ -45,10 +45,23 @@ let start_date_ts = start_date.getTime()
 let today_ts = today.getTime()
 
 let purple_div = document.getElementById('purple')
-purple_div.innerHTML = `This week's Purple Smoke bush goes to ${purple_rot[Math.floor((today_ts-start_date_ts)/one_week)%15]}<br>`
-purple_div.innerHTML = purple_div.innerHTML + `Next week's Purple Smoke goes to ${purple_rot[(Math.floor((today_ts-start_date_ts)/one_week)+1)%15]}`
+let purple_today = document.createElement('div')
+let purple_tomm = document.createElement('div')
+purple_today.innerHTML = `This week's Purple Smoke bush goes to ${purple_rot[Math.floor((today_ts-start_date_ts)/one_week)%15]}<br>`
+purple_today.classList.add("today")
+purple_tomm.innerHTML = `Next week's Purple Smoke goes to ${purple_rot[(Math.floor((today_ts-start_date_ts)/one_week)+1)%15]}`
+purple_tomm.classList.add("tomorrow")
+purple_div.appendChild(purple_today)
+purple_div.appendChild(purple_tomm)
 purple_div.hidden = false
 
 let gold_div = document.getElementById("golden")
-gold_div.innerHTML = `Today's Golden Bell goes to ${golden_rot[Math.floor((today_ts-start_date_ts)/one_day)%15]}<br>Tomorrow's Golden Bell goes to ${golden_rot[(Math.floor((today_ts-start_date_ts)/one_day)+1)%15]}`
+let gold_today = document.createElement('div')
+let gold_tomm = document.createElement('div')
+gold_today.innerHTML = `Today's Golden Bell goes to ${golden_rot[Math.floor((today_ts-start_date_ts)/one_day)%15]}`
+gold_tomm.innerHTML = `Tomorrow's Golden Bell goes to ${golden_rot[(Math.floor((today_ts-start_date_ts)/one_day)+1)%15]}`
+gold_today.classList.add("today")
+gold_tomm.classList.add("tomorrow")
+gold_div.appendChild(gold_today)
+gold_div.appendChild(gold_tomm)
 gold_div.hidden = false

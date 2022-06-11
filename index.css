@@ -1,0 +1,19 @@
+body {
+    background-color: palevioletred;
+}
+
+#purple {
+    color: purple;
+}
+
+#golden {
+    color: gold;
+}
+
+.today {
+    font-weight: bolder;
+}
+
+.tomorrow {
+    font-weight: lighter;
+}
