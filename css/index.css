@@ -2,6 +2,11 @@ body {
     background-color: palevioletred;
 }
 
+.image {
+    float: left;
+    padding-right: 10px;
+}
+
 #purple {
     color: purple;
 }
